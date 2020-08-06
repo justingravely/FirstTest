@@ -5,7 +5,7 @@ body {
   box-sizing: border-box;
   font-family: monospace;
   background-image: url("https://cdn.discordapp.com/attachments/736393082831896590/736611251769311263/wes-hicks-ZEZeFBLfiLs-unsplash_1.jpg");
-  background-size: contain;
+  background-size: cover;
 }
 
 a {
@@ -43,25 +43,69 @@ a:hover {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(42, 42, 42, 0.8);
-  display: flex;
-  width: 100%;
-  height: 3em;
+  bottom: 0;
+  background-color: rgba(26, 26, 26, 0.99);
+  width: 5em;
+  height: 100%;
   border-bottom: 3px solid rgba(174, 69, 255);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  transition: 0.6s;
+}
+
+#navbar:hover {
+  width: 25em;
 }
 
 #navbar a {
   margin: auto;
-  padding-left: 2em;
+  margin-right: 0.5em;
+  margin-top: 0.6em;
   justify-content: center;
-  font-size: 1.3em;
+  font-size: 2.5em;
   text-shadow: 1px 1px 5px grey;
+  transition: 0.6s;
 }
+
+#navbar .logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: 0.6s;
+  margin-left: 2em;
+}
+
+#navbar:hover .logo-text {
+  left: 0;
+}
+
+#navbar a i {
+  transition: 0.6s;
+}
+
+#navbar:hover a i{
+  transform: rotate(-180deg);
+}
+
+/* WRAP */
+
+.full-content-wrap {
+  margin: auto;
+  margin-right: 0;
+  margin-left: 5em;
+}
+
+#navbar:hover .full-content-wrap {
+  margin-left: 10em;
+}
+
+/* WELCOME */
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  width: 950px;
+  width: 71.5em;
   margin: auto;
   margin-top: 6em;
   background-color: rgba(26, 26, 26, 0.99);
@@ -71,9 +115,8 @@ a:hover {
   padding-bottom: 0.7em;
 }
 
-/* WELCOME */
 #welcome-section {
-  height: 50vh;
+  height: 30em;
   width: 100%;
   background-image: url("https://cdn.discordapp.com/attachments/736393082831896590/736393147218919555/krzysztof-hepner-ymx8g15pxD4-unsplash_1.jpg");
   background-size: cover;
@@ -83,7 +126,7 @@ a:hover {
 }
 
 .welcome-wrap {
-  margin: auto;
+  margin: 1em auto;
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -97,7 +140,7 @@ a:hover {
   width: 15%;
   margin: auto;
   border-radius: 50%;
-  margin-top: 6em;
+  margin-top: 4em;
   border: 1px solid black;
 }
 
@@ -149,6 +192,7 @@ a:hover {
 
 .experience:hover .time img {
   pointer-events: all;
+  border-radius: 15px;
 }
 
 .experience:hover .time{
@@ -156,7 +200,7 @@ a:hover {
 }
 
 .experience:hover {
-  height: 51em;
+  height: 52em;
 }
 
 
@@ -184,12 +228,12 @@ a:hover {
 
 
 #projects {
-  width: 25%;
-  height: 100vh;
+  margin: 3em auto;
+  width: 77em;
   margin-top: 3em;
-  display: flex;
-  margin-right: 2em;
-  border-radius: 15px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
 }
 
 /* PROJECTS BACKUP */
@@ -200,18 +244,20 @@ a:hover {
   display: flex;
 } */
 
-.projects-wrap {
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  flex-direction: column;
-  display: flex;
-  overflow-y: scroll;
+#darker-thumbnail {
+  opacity: 0.7;
+}
+
+#darker-thumbnail:hover {
+  opacity: 1;
 }
 
 .project-tile {
-  display: flex;
-  flex-direction: column;
+  background-color: rgba(26, 26, 26, 0.99);
+  margin: 1em;
+  padding: 1em;
+  border-radius: 15px;
+  border: 1px solid rgba(42, 42, 42, 0.8);
 }
 
 .project-tile a {
@@ -230,17 +276,22 @@ a:hover {
 }
 
 .project-tile h1 {
-  font-size: 1.1em;
+  font-size: 1.5em;
 }
 
 .project-tile p {
-  font-size: 0.9em;
+  font-size: 1.2em;
   color: #dbdbdb;
 }
 
 .project-tile img {
   width: 100%;
   border-radius: 15px;
+  opacity: 0.7;
+}
+
+.project-tile img:hover {
+  opacity: 1;
 }
 
 /* ABOUT */
@@ -308,15 +359,17 @@ a:hover {
   width: 100%;
   background-color: rgba(42, 42, 42, 0.8);
   display: flex;
+  flex-direction: column;
   border-TOP: 3px solid rgba(174, 69, 255);
-  
 }
 
-.contact-wrap h1 {
+#contact h1 {
   font-size: 2em;
+  margin: 1em auto auto auto;
 }
 
 #contact .contact-wrap {
+  display: flex;
   margin: auto;
   padding: 0 1em 0 1em;
 }
@@ -326,6 +379,7 @@ a:hover {
   width: fit-content;
   font-size: 1.7em;
   margin-bottom: 0.7em;
+  padding: 1em;
 }
 
 .contact-wrap a i {
