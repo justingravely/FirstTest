@@ -52,13 +52,23 @@ a:hover {
   padding: 0;
   display: flex;
   transition: 0.6s;
+  border-right: 3px solid rgb(174, 69, 255);
 }
 
 #navbar:hover {
   width: 25em;
 }
 
-#navbar a {
+#navbar .bar {
+  position: absolute;
+  height: 6em;
+  width: 100%;
+  background-color: rgba(41, 41, 41, 0.99);
+  border-bottom: 3px solid rgb(174, 69, 255);
+  z-index: -1;
+}
+
+#navbar .top-a {
   margin: auto;
   margin-right: 0.5em;
   margin-top: 0.6em;
@@ -80,12 +90,70 @@ a:hover {
   left: 0;
 }
 
-#navbar a i {
+#navbar .top-a i {
   transition: 0.6s;
 }
 
-#navbar:hover a i{
+#navbar:hover .top-a i{
   transform: rotate(-180deg);
+}
+
+#navbar ul {
+  position: absolute;
+  list-style: none;
+  top: 4em;
+  left: -3.5em;
+}
+
+#navbar ul li:first-child {
+  margin-top: 0.45em;
+}
+
+#navbar .no {
+  color: white;
+}
+
+#navbar .no:hover {
+  color: #ffec6e;
+}
+
+#navbar ul li {
+  font-size: 2.5em;
+  display: flex;
+  height: 2em;
+  width: 1.5em;
+  padding-top: 0.8em;
+  padding-left: 0.5em;
+  transition: 0.6s;
+}
+
+#navbar ul li:hover {
+  color: #ffec6e;
+  background-color: rgba(41, 41, 41, 0.99);
+  cursor: pointer;
+}
+
+#navbar .nav-details {
+  position: absolute;
+  margin-top: 0.5em;
+  margin-left: 1em;
+  font-size: 0.5em;
+  opacity: 0;
+  transition: 0.6s;
+  margin-left: -10em;
+}
+
+#navbar:hover .nav-details {
+  margin-left: 1.5em;
+  opacity: 1;
+}
+
+#navbar:hover ul li {
+  width: 9.65em;
+}
+
+#help {
+  padding-left: 0.2em;
 }
 
 /* WRAP */
@@ -107,7 +175,7 @@ a:hover {
   flex-direction: column;
   width: 71.5em;
   margin: auto;
-  margin-top: 6em;
+  margin-top: 3em;
   background-color: rgba(26, 26, 26, 0.99);
   padding: 2em;
   border-radius: 40px;
@@ -131,7 +199,6 @@ a:hover {
   flex-direction: column;
   width: 50%;
   padding: 1em;
-  background-color: rgba(51, 51, 51, 0.77);
   border-radius: 15px;
   margin-bottom: 8em;
 }
@@ -147,9 +214,9 @@ a:hover {
 .welcome-wrap h1 {
   font-size: 3em;
   color: white;
-  padding: 0em;
   text-align: center;
   margin: 0;
+  text-shadow: 1px 1px 1px #4e4a30;
 }
 
 .welcome-wrap p {
@@ -157,7 +224,16 @@ a:hover {
   font-size: 1.5em;
   color: white;
   margin: 0;
+  text-shadow: 1px 1px 1px #4e4a30;
 }
+
+.welcome-wrap .tooltip {
+  font-size: 1em;
+  margin-top: 5em;
+  background-color: rgba(26, 26, 26, 0);
+}
+
+/* DROPDOWN */
 
 .experience {
   margin: auto;
@@ -167,11 +243,37 @@ a:hover {
   transition: 0.3s;
 }
 
+.experience .time img {
+  border-radius: 15px;
+}
+
 #homer {
   margin: auto;
   margin-top: 0.3em;
   cursor: pointer;
   font-size: 1.5em;
+}
+
+
+#homer i {
+  font-size: 1em;
+  animation: arrows;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  position: absolute;
+  left: 50%;
+  top: 19em;
+  margin-left: 1em;
+}
+
+@keyframes arrows {
+  0% {
+    margin-top: 0;
+  } 50% {
+    margin-top: 0.5em;
+  } 100% {
+    margin-top: 0;
+  }
 }
 
 .time p {
@@ -190,9 +292,12 @@ a:hover {
   pointer-events: all;
 }
 
+.experience:hover #homer i {
+  color: #ffec6e;
+}
+
 .experience:hover .time img {
   pointer-events: all;
-  border-radius: 15px;
 }
 
 .experience:hover .time{
@@ -203,29 +308,7 @@ a:hover {
   height: 52em;
 }
 
-
 /* PROJECTS */
-
-/* .project-title {
-  font-weight: normal;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: 5.9em;
-  margin: auto;
-  opacity: 0.9;
-} */
-/* BACKUP PROJECT-TITLE */
-/* .project-title {
-  position: absolute;
-  font-weight: normal;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: 5.9em;
-  margin-top: -0.2em;
-  margin-left: 0.25em;
-  opacity: 0.9;
-*/
-
 
 #projects {
   margin: 3em auto;
@@ -235,14 +318,6 @@ a:hover {
   grid-gap: 10px;
   grid-template-columns: repeat(3, minmax(50px, 1fr));
 }
-
-/* PROJECTS BACKUP */
-/* #projects {
-  width: 45%;
-  height: 100vh;
-  margin-top: 3em;
-  display: flex;
-} */
 
 #darker-thumbnail {
   opacity: 0.7;
