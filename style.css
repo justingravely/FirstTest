@@ -6,6 +6,7 @@ body {
   font-family: monospace;
   background-image: url("https://cdn.discordapp.com/attachments/736393082831896590/736611251769311263/wes-hicks-ZEZeFBLfiLs-unsplash_1.jpg");
   background-size: cover;
+  width: 100%;
 }
 
 a {
