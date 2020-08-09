@@ -247,11 +247,13 @@ a:hover {
 
 .experience .time img {
   border-radius: 15px;
+  margin: auto;
+  width: 100%;
 }
 
 #homer {
   margin: auto;
-  margin-top: 0.3em;
+  margin-top: 0;
   cursor: pointer;
   font-size: 1.5em;
 }
@@ -285,6 +287,8 @@ a:hover {
   opacity: 0;
   transition: 0.5s;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .experience:hover .time p a {
@@ -306,6 +310,34 @@ a:hover {
 
 .experience:hover {
   height: 52em;
+}
+
+/* SUMMARY */
+
+#navbar p {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  margin-left: 3.5em;
+  margin-bottom: 2em;
+  animation: fade;
+  animation-duration: 3s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
+}
+
+#navbar:hover p {
+  display: inline;
+}
+
+.summary {
+  font-size: 1.5em;
 }
 
 /* PROJECTS */
