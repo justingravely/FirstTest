@@ -514,6 +514,17 @@ a:hover {
   #navbar {
     width: 10em;
   }
+
+  #navbar p {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    margin-left: 3.75em;
+    margin-bottom: 2em;
+    animation: fade;
+    animation-duration: 3s;
+    font-size: 2em;
+  }
  
 }
 
