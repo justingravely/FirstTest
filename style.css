@@ -469,9 +469,11 @@ a {
 }
   .gridChoiceInnerWrap {
     display: flex;
+    width: 10rem;
   }
   .gridChoiceInner {
     padding: 0.33rem;
+    margin-right: 0.33rem;
   }
 
 #pixelUiTop {
@@ -516,6 +518,7 @@ a {
 .pixelRightWrap {
   height: 100%;
   width: 30%;
+  padding-bottom: 0.15rem;
 }
 
 .colorBrightness {
